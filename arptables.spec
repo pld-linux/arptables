@@ -5,13 +5,15 @@ Version:	0.0.3
 Release:	1
 License:	GPL
 Group:		Networking/Daemons
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-v%{version}-2.tar.gz
-# Source0-md5:	c4559af2366c764c6c42a3fdd40d60d3
+Source0:	http://dl.sourceforge.net/ebtables/%{name}-v%{version}-2.tar.gz
+# Source0-md5:	283d19292bd99913dc3a42842826c286
 Patch0:		%{name}-llh.patch
 URL:		http://ebtables.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+arptables is used to set up and maintain the tables of ARP rules in
+the Linux kernel. These rules inspect the ARP frames which they see.
 
 %prep
 %setup -q -n %{name}-v%{version}-2
