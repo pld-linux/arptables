@@ -15,6 +15,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 arptables is used to set up and maintain the tables of ARP rules in
 the Linux kernel. These rules inspect the ARP frames which they see.
 
+%description -l pl
+arptables s³u¿y do ustawiania i zarz±dzania tablicami regu³ ARP w
+j±drze Linuksa. Regu³y te dozoruj± ramki APR widziane przez system.
+
 %prep
 %setup -q -n %{name}-v%{version}-2
 %patch0 -p1
