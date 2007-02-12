@@ -1,5 +1,5 @@
 Summary:	Arp Tables
-Summary(pl.UTF-8):   Arp Tables - filtrowanie pakietów ARP
+Summary(pl.UTF-8):	Arp Tables - filtrowanie pakietów ARP
 Name:		arptables
 Version:	0.0.3
 Release:	1
