@@ -1,5 +1,5 @@
 Summary:	Arp Tables
-Summary(pl):	Arp Tables - filtrowanie pakietÛw ARP
+Summary(pl.UTF-8):   Arp Tables - filtrowanie pakiet√≥w ARP
 Name:		arptables
 Version:	0.0.3
 Release:	1
@@ -15,9 +15,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 arptables is used to set up and maintain the tables of ARP rules in
 the Linux kernel. These rules inspect the ARP frames which they see.
 
-%description -l pl
-arptables s≥uøy do ustawiania i zarz±dzania tablicami regu≥ ARP w
-j±drze Linuksa. Regu≥y te dozoruj± ramki APR widziane przez system.
+%description -l pl.UTF-8
+arptables s≈Çu≈ºy do ustawiania i zarzƒÖdzania tablicami regu≈Ç ARP w
+jƒÖdrze Linuksa. Regu≈Çy te dozorujƒÖ ramki APR widziane przez system.
 
 %prep
 %setup -q -n %{name}-v%{version}-2
