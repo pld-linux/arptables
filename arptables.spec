@@ -1,12 +1,12 @@
-Summary:	Arp Tables
+Summary:	Arp Tables - ARP packets filtering
 Summary(pl.UTF-8):	Arp Tables - filtrowanie pakietów ARP
 Name:		arptables
-Version:	0.0.3
-Release:	2
+Version:	0.0.4
+Release:	1
 License:	GPL v2+
 Group:		Networking/Daemons
-Source0:	http://dl.sourceforge.net/ebtables/%{name}-v%{version}-3.tar.gz
-# Source0-md5:	3f4a8b62920a46d746ab892be7de088f
+Source0:	http://downloads.sourceforge.net/ebtables/%{name}-v%{version}.tar.gz
+# Source0-md5:	c2e99c3aa9d78c9dfa30710ca3168182
 URL:		http://ebtables.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -19,7 +19,7 @@ arptables służy do ustawiania i zarządzania tablicami reguł ARP w
 jądrze Linuksa. Reguły te dozorują ramki ARP widziane przez system.
 
 %prep
-%setup -q -n %{name}-v%{version}-3
+%setup -q -n %{name}-v%{version}
 
 %build
 %{__make} \
@@ -36,5 +36,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_sbindir}/*
-%{_mandir}/man8/*
+%attr(755,root,root) %{_sbindir}/arptables
+%{_mandir}/man8/arptables.8*
