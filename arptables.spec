@@ -1,12 +1,12 @@
 Summary:	Arp Tables - ARP packets filtering
 Summary(pl.UTF-8):	Arp Tables - filtrowanie pakietów ARP
 Name:		arptables
-Version:	0.0.4
+Version:	0.0.5
 Release:	1
 License:	GPL v2+
 Group:		Networking/Daemons
-Source0:	http://downloads.sourceforge.net/ebtables/%{name}-v%{version}.tar.gz
-# Source0-md5:	c2e99c3aa9d78c9dfa30710ca3168182
+Source0:	http://ftp.netfilter.org/pub/arptables/%{name}-%{version}.tar.gz
+# Source0-md5:	ca6616bedd885ac14dd1af8757fb20fa
 URL:		http://ebtables.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -19,7 +19,7 @@ arptables służy do ustawiania i zarządzania tablicami reguł ARP w
 jądrze Linuksa. Reguły te dozorują ramki ARP widziane przez system.
 
 %prep
-%setup -q -n %{name}-v%{version}
+%setup -q
 
 %build
 %{__make} \
@@ -28,13 +28,20 @@ jądrze Linuksa. Reguły te dozorują ramki ARP widziane przez system.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -D %{name}	$RPM_BUILD_ROOT%{_sbindir}/%{name}
-install -D %{name}.8	$RPM_BUILD_ROOT%{_mandir}/man8/%{name}.8
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	PREFIX=%{_prefix} \
+	MANDIR=%{_mandir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_sbindir}/arptables
-%{_mandir}/man8/arptables.8*
+%attr(755,root,root) %{_sbindir}/arptables-legacy
+%attr(755,root,root) %{_sbindir}/arptables-restore
+%attr(755,root,root) %{_sbindir}/arptables-save
+%{_mandir}/man8/arptables-legacy.8*
+%{_mandir}/man8/arptables-restore.8*
+%{_mandir}/man8/arptables-save.8*
